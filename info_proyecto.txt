@@ -1,0 +1,44 @@
+AREA FUTBOL
+
+BASE DE DATOS - TABLAS
+"USERS"
+La crea comando Auth
+
+TABLA "POST"
+ID
+IMAGEN
+DESCRIPCION
+TIMESTAP
+USERS_ID
+
+TABLA "COMENTARIOS"
+ID
+COMENTARIO
+POST_ID
+USERS_ID
+
+    public function up()
+    {
+        Schema::create('posteos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('imagen');
+            $table->char('descripcion', 500);
+            $table->foreign('users_id')
+            ->references('id')->on('users');
+            $table->timestamps();
+        });
+    }
+        public function up()
+    {
+        Schema::create('comentarios', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('comentario');
+            $table->foreign('post_id')
+            ->references('id')->on('posteos');
+            $table->foreign('users_id')
+            ->references('id')->on('users');
+            $table->timestamps();
+        });
+    }
+
+
