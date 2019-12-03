@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-});
+Route::get('/', 'PostController@listar' );
 
 //listar
 Route::get('/posteos', 'PostController@listar' )->name('posteos.listar');
@@ -27,6 +25,19 @@ Route::post('/posteos/modificar', 'PostController@modificar');
 Route::get('/posteos/eliminar/{id}', 'PostController@eliminar');
 
 Route::get('/posteos/{id}', 'PostController@detalle' );
+
+//listar
+//Route::get('/posteos', 'ComentarioController@listar' )->name('posteos.listar');
+
+//agregar
+//Route::get('/posteos/comentar', 'ComentarioController@mostrar');
+Route::post('/posteos/comentar', 'ComentarioController@agregar')->name('comentarios.agregar');
+//modificar
+Route::post('/comentario/modificar', 'ComentarioController@modificar');
+//eliminar
+Route::get('/comentario/eliminar/{id}', 'ComentarioController@eliminar');
+
+
 
 Auth::routes();
 

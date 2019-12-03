@@ -283,6 +283,7 @@ header {
     min-height: 750px;
     height: 100vh; }
 
+
 .box {
   padding: 30px;
   background: #fff; }
@@ -314,7 +315,13 @@ header {
 .site-hero-innerpage, .site-hero-innerpage .site-hero-inner {
   min-height: 550px;
   height: 50vh; }
-
+  
+img.w50 {
+  width: 45%;
+}
+div.w50 {
+  width: 45%;
+}
 .site-section {
   padding: 7em 0; }
   .site-section.py-md {

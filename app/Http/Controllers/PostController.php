@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use App\Comentario;
+
+use App\User;
+
 class PostController extends Controller
 {
     public function listar() {
@@ -14,7 +18,9 @@ class PostController extends Controller
     }
     public function detalle($id) {
         $posteos = Post::findOrFail($id);
-        return view('blog.detalle', compact('posteos'));
+        $comentarios = Comentario::all();
+        $usuarios = User::all();
+        return view('blog.detalle', compact('posteos','comentarios', 'usuarios'));
     }
     public function modificar(Request $req) {
         //buscar el actor que queremos modificar
