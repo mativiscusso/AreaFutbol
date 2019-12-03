@@ -16,6 +16,10 @@ class PostController extends Controller
         $posteos = Post::all();
         return view('blog.index', compact('posteos'));
     }
+    public function listarAdmin() {
+        $posteos = Post::all();
+        return view('blog.posteos', compact('posteos'));
+    }
     public function detalle($id) {
         $posteos = Post::findOrFail($id);
         $comentarios = Comentario::where('post_id', $id)->get();

@@ -10,7 +10,7 @@ class ComentarioController extends Controller
 {
     public function listar() {
         $comentarios = Comentario::all();
-        return view('blog.detalle', compact('comentarios'));
+        return view('blog.comentarios', compact('comentarios'));
     }
     public function detalle($id) {
         $comentarios = DB::table('comentarios')->where('post_id', '=', "$id")->get();

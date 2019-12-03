@@ -27,6 +27,7 @@
             </div>
 
     </div>
+    @auth
     @foreach($usuarios as $usuario)
     @endforeach
     <div id="comentarios" class="container py-3">
@@ -40,5 +41,6 @@
     </form>
     </div>
 </div>
+@endauth
 @endsection
 

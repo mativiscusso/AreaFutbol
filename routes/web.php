@@ -13,30 +13,33 @@
 
 Route::get('/', 'PostController@listar' );
 
-//listar
+//listar posteos
 Route::get('/posteos', 'PostController@listar' )->name('posteos.listar');
-
-//agregar
+//agregar posteos
 Route::get('/posteos/agregar', 'PostController@mostrar');
 Route::post('/posteos/agregar', 'PostController@agregar')->name('posteos.agregar');
-//modificar
+//modificar posteos
 Route::post('/posteos/modificar', 'PostController@modificar');
-//eliminar
+//eliminar posteos
 Route::get('/posteos/eliminar/{id}', 'PostController@eliminar');
 
 Route::get('/posteos/{id}', 'PostController@detalle' );
 
-//listar
+//listar comentarios
 Route::get('/comentarios/listar', 'ComentarioController@listar' )->name('posteos.listar');
-
-//agregar
+//agregar comentarios
 Route::post('/posteos/comentar', 'ComentarioController@agregar')->name('comentarios.agregar');
-//modificar
+//modificar comentarios
 Route::post('/comentario/modificar', 'ComentarioController@modificar');
-//eliminar
+//eliminar comentarios
 Route::get('/comentario/eliminar/{id}', 'ComentarioController@eliminar');
 
+Route::get('/admin', function () {
+    return view('blog.admin');
+});
+Route::get('/admin/posteos', 'PostController@listarAdmin');
 
+Route::get('/admin/comentarios', 'ComentarioController@listar');
 
 Auth::routes();
 
