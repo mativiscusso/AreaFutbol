@@ -27,10 +27,9 @@ Route::get('/posteos/eliminar/{id}', 'PostController@eliminar');
 Route::get('/posteos/{id}', 'PostController@detalle' );
 
 //listar
-//Route::get('/posteos', 'ComentarioController@listar' )->name('posteos.listar');
+Route::get('/comentarios/listar', 'ComentarioController@listar' )->name('posteos.listar');
 
 //agregar
-//Route::get('/posteos/comentar', 'ComentarioController@mostrar');
 Route::post('/posteos/comentar', 'ComentarioController@agregar')->name('comentarios.agregar');
 //modificar
 Route::post('/comentario/modificar', 'ComentarioController@modificar');

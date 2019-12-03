@@ -13,8 +13,10 @@ class ComentarioController extends Controller
         return view('blog.detalle', compact('comentarios'));
     }
     public function detalle($id) {
-        $comentarios = Comentario::findOrFail($id);
+        $comentarios = DB::table('comentarios')->where('post_id', '=', "$id")->get();
+        dd($comentarios);
         return view('blog.detalle', compact('comentarios'));
+        
     }
     public function modificar(Request $req) {
         //buscar el actor que queremos modificar
@@ -48,6 +50,7 @@ class ComentarioController extends Controller
         //asignarle los valores al objeto
         $comentarios->comentario = $req['comentario'];
         $comentarios->user = $req['nombre'];
+        $comentarios->post_id = $req['post_id'];
         //guardarlo
         $comentarios->save();
         return redirect('posteos');

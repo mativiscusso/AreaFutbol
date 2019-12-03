@@ -34,6 +34,7 @@
     <form class="py-1" action="/posteos/comentar" method="POST">
     {{csrf_field()}}
     <input type="hidden" name="nombre" id="" value="{{$usuario->name}}">
+    <input type="hidden" name="post_id" id="" value="{{$posteos->id}}">
         <textarea class="w-75" name="comentario" id="" rows="5"></textarea><br>
         <input type="submit">
     </form>

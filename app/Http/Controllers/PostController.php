@@ -18,7 +18,7 @@ class PostController extends Controller
     }
     public function detalle($id) {
         $posteos = Post::findOrFail($id);
-        $comentarios = Comentario::all();
+        $comentarios = Comentario::where('post_id', $id)->get();
         $usuarios = User::all();
         return view('blog.detalle', compact('posteos','comentarios', 'usuarios'));
     }
