@@ -2,8 +2,8 @@
 
 @section('contenido')
   
-        <div class="container logo-wrap py-5">
-          <div class="row py-5">
+        <div id="portada" class="container-fluid logo-wrap py-5">
+          <div id="titulo" class="row py-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
               <h1 class="site-logo"><a href="index.html">Area Futbol</a></h1>
@@ -12,7 +12,7 @@
           </div>
         </div>
      
-        <div class="container">
+        <div class="container py-5">
           <div class="row">
             <div class="col-12">
               <h2 class="mb-4">Ultimos Posteos</h2>

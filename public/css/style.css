@@ -1,5 +1,5 @@
 body {
-  background: #ccc url("../images/photography.png") repeat;
+  background: white;
   font-family: "Inconsolata", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-weight: 300;
   font-size: 18px;
@@ -24,7 +24,20 @@ h1, h2, h3, h4, h5 {
   background: #fff;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1); }
+div#portada {
+  height: 100vh;
+  background-image: url('/storage/portada.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div#titulo {
+  margin-top: 15%;
+  text-shadow: 3px 3px 5px white;
+}
 
+nav {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 header {
   position: relative;
   top: 0;
@@ -142,7 +155,7 @@ header {
     text-align: right; }
 
 .navbar .container > div {
-  border-bottom: 1px solid #e6e6e6; }
+
   @media (max-width: 767.98px) {
     .navbar .container > div {
       border-bottom: none; } }
@@ -989,7 +1002,10 @@ textarea.form-control {
       font-size: 20px; }
     .media-custom .media-body p:last-child {
       margin-bottom: 0; }
-
+      
+div.card.col-12 {
+  border:0;
+}
 #accordion .card {
   font-size: 15px;
   border-color: #dee2e6; }
