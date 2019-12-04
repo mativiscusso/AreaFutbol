@@ -19,8 +19,8 @@
       <td>{{$comentario->user}}</td>
       <td>{{$comentario->comentario}}</td>
       <td>{{$comentario->post_id}}</td>
-      <td><a href=""><button type="button" class="btn btn-warning">Modificar</button></a></td>
-      <td><a href=""><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+      <td><a href="/comentario/modificar/{{$comentario->id}}"><button type="button" class="btn btn-warning">Modificar</button></a></td>
+      <td><a href="/comentario/eliminar/{{$comentario->id}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
     </tr>
 @endforeach
   </tbody>

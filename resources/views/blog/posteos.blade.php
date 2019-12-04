@@ -15,8 +15,8 @@
                       <h5 class="card-title">{{$post->titulo}}</h5>
                         <div class="row">                         
                             {{$post->descripcion}}
-                          <a href=""><button type="button" class="btn btn-warning">Modificar</button></a>&nbsp;
-                          <a href=""><button type="button" class="btn btn-danger">Eliminar</button></a>
+                          <a href="/posteos/eliminar/{{$post->id}}"><button type="button" class="btn btn-danger">Eliminar</button></a>&nbsp;
+                          <a href="/posteos/modificar/{{$post->id}}"><button type="button" class="btn btn-warning">Modificar</button></a>&nbsp;
                         </div>
                           <p class="card-text"><small class="text-muted">Ultima actualizacion {{$post->updated_at}}</small></p>
                     </div>

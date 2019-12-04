@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Post;
 
 use App\Comentario;
@@ -27,20 +29,31 @@ class PostController extends Controller
         return view('blog.detalle', compact('posteos','comentarios', 'usuarios'));
     }
     public function modificar(Request $req) {
-        //buscar el actor que queremos modificar
+        //validar los datos que envia el form
+        $reglas = [
+            'titulo' => 'required|string' ,
+            'descripcion' => 'required|string' ,
+            'imagen' => 'file'
+        ];
+        $mensajes = [
+            'required' => 'El campo :attribute es requerido',
+            'string' => 'El campo :attribute debe contener una palabra',
+        ];
+
+        $this->validate($req, $reglas, $mensajes);     
         $id = $req['id'];
         $posteos = Post::findOrFail($id);
         //traigo imagen
         $pathImg = $req->file('imagen')->store('public');
         $nombreFinal = basename($pathImg);
-        //definir que campos queremos modificar
+        //asignarle los valores al objeto
         $posteos->titulo = $req['titulo'];
         $posteos->descripcion = $req['descripcion'];
         $posteos->imagen = $nombreFinal;
-        //guardar los datos 
+        //guardarlo
         $posteos->save();
         //retornar a la vista
-        return redirect('blog.index');
+        return view('blog.admin');
     }
     public function agregar(Request $req){
         //validar los datos que envia el form
@@ -72,11 +85,16 @@ class PostController extends Controller
     public function mostrar(){
         return view('blog.agregar');
     }
-    public function eliminar(Request $req) {
-        $posteos = Post::findOrFail($req['id']);
+    public function edicion($id){
+        $posteos = Post::findOrFail($id);
+        return view('blog.modificar', compact('posteos'));
+    }
+    public function eliminar(Request $req, $id) {
+        $posteos = Post::findOrFail($id);
         //$actor->episodios()->detach();
         //$actor->peliculas()->detach();
+        Storage::delete($posteos->imagen);
         $posteos->delete();
-        return redirect('blog.index');
+        return view('blog.admin', compact('posteos'));
     }
 }

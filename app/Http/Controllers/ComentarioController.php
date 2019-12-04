@@ -22,17 +22,16 @@ class ComentarioController extends Controller
         //buscar el actor que queremos modificar
         $id = $req['id'];
         $comentarios = Comentario::findOrFail($id);
-        //traigo imagen
-        $pathImg = $req->file('imagen')->store('public');
-        $nombreFinal = basename($pathImg);
         //definir que campos queremos modificar
-        $comentarios->titulo = $req['titulo'];
-        $comentarios->descripcion = $req['descripcion'];
-        $comentarios->imagen = $nombreFinal;
+        $comentarios->comentario = $req['comentario'];
         //guardar los datos 
         $comentarios->save();
         //retornar a la vista
-        return redirect('blog.index');
+        return view('blog.admin');
+    }
+    public function edicion($id){
+        $comentarios = Comentario::findOrFail($id);
+        return view('blog.modificarcomentario', compact('comentarios'));
     }
     public function agregar(Request $req){
         //validar los datos que envia el form
@@ -58,11 +57,11 @@ class ComentarioController extends Controller
     public function mostrar(){
         return view('blog.detalle');
     }
-    public function eliminar(Request $req) {
-        $comentarios = Comentario::findOrFail($req['id']);
+    public function eliminar(Request $req, $id) {
+        $comentarios = Comentario::findOrFail($id);
         //$actor->episodios()->detach();
         //$actor->peliculas()->detach();
         $comentarios->delete();
-        return redirect('blog.index');
+        return view('blog.admin');
     }
 }

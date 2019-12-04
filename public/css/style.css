@@ -38,6 +38,9 @@ div#titulo {
 nav {
   background-color: rgba(255, 255, 255, 0.8);
 }
+a.nav-item {
+  color:black;
+}
 header {
   position: relative;
   top: 0;
