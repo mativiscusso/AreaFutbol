@@ -37,7 +37,8 @@ Para crear la base de datos «areafutbol_db» introducimos el siguiente comando:
     
     php artisan serv 
  
- Datos de acceso como Administrador
+ **Datos de acceso como Administrador**
+ 
  Email: administrador@admin.com
  Password: admin1234
  
