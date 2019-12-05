@@ -38,6 +38,7 @@ class PostController extends Controller
         $mensajes = [
             'required' => 'El campo :attribute es requerido',
             'string' => 'El campo :attribute debe contener una palabra',
+            'imagen' => 'El campo :attribute debe contener una imagen'
         ];
 
         $this->validate($req, $reglas, $mensajes);     
