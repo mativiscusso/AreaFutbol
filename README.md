@@ -6,24 +6,24 @@ AreaFutbol es una plataforma donde se reunen los entrenadores para poder subir e
 https://github.com/mativiscusso/AreaFutbol.git
 Ubicados en la ruta del proyecto ejecutar el comando:
 
-'composer install'
+`composer install`
 
 2- Crear Base de Datos llamada "areafutbol_db"
 
 DESDE CONSOLA
 Lo primero que tenemos que hacer para poder ejecutar comandos es ejecutar el programa ‘mysql‘ que si ya tenéis instalado en el ordenador o servidor, bastaría con ejecutar desde la consola el siguiente comando:
 
-'$mysql -u usuario -p'
+`$mysql -u usuario -p`
 
 Es posible que no tengáis contraseña si estáis utilizando algún paquete como XAMPP o similar. En ese caso bastaría con poner el siguiente comando:
 
-'$mysql -u root'
+`$mysql -u root`
 
 Si al ejecutar el comando mysql te un error de que no encuentra el programa, tendrás que ejecutarlo directamente en la ruta en la que está ubicado o añadir esa ruta para que podamos ejecutarlo desde cualquier directorio de nuestro disco.
 Ahora llega el momento de crear una nueva base de datos mysql
 Para crear la base de datos «areafutbol_db» introducimos el siguiente comando:
 
-CREATE DATABASE areafutbol_db;
+`CREATE DATABASE areafutbol_db;`
 
 3- Abrir el proyecto con su editor de texto y configurar el archivo .env asignandole el nombre de la Base de Datos para su conexion
 
@@ -45,5 +45,5 @@ CREATE DATABASE areafutbol_db;
  
  6- Abrir el navegador e ingresar a la ruta 
  
-    localhost:8000
+    `localhost:8000`
  
