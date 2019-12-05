@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Post;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserAdmin::class);
+        DB::table('users')->insert([
+            'name' => 'administrador',
+            'email' => 'administrador@admin.com',
+            'edad' => '18',
+            'role' => 'admin',
+            'password' => bcrypt('admin1234')
+        ]);
+        factory(Post::class, 10)->create();
     }
 }

@@ -15,7 +15,7 @@ use App\User;
 class PostController extends Controller
 {
     public function listar() {
-        $posteos = Post::all();
+        $posteos = Post::paginate(4);
         return view('blog.index', compact('posteos'));
     }
     public function listarAdmin() {

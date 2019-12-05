@@ -38,6 +38,7 @@
                   </div>
             </div>
             @endforeach
+            {{$posteos->links()}}
           </div>
         </div>
       </div>
