@@ -25,7 +25,7 @@ Para crear la base de datos «areafutbol_db» introducimos el siguiente comando:
 
 `CREATE DATABASE areafutbol_db;`
 
-3- Abrir el proyecto con su editor de texto y configurar el archivo .env asignandole el nombre de la Base de Datos para su conexion
+3- Abrir el proyecto con su editor de texto y configurar el archivo .env (duplicar el .envexample y renombrarlo) asignandole el nombre de la Base de Datos para su conexion
 
 4- Ubicados por consola en el PATH donde clonaron el repositorio o desde la consola de su editor de texto correr los siguientes comandos:
 
